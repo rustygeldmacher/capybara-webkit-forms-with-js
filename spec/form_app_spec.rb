@@ -33,9 +33,12 @@ describe Capybara::Driver::Webkit do
       end
 
       it "should clear multi-select selections via javascript" do
+         subject.find("//select[@name='toppings']//option[@selected='selected']").length.should == 3
          toppings_select.value.should == ["Apple", "Banana", "Cherry"]
          subject.evaluate_script("clearSelections();")
-         puts toppings_select.value.should == []
+         # Both of these next two lines will fail
+         toppings_select.value.should == []
+         subject.find("//select[@name='toppings']//option[@selected='selected']").length.should == 0
       end
 
   end
