@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+   <head>
+      <title></title>
+   </head>
+   <body>
+      <form action="/" method="get">
+         <input type="text" id="foo" name="foo" value="bar">
+         <input type="text" name="maxlength_foo" value="bar" maxlength="10">
+         <input type="text" id="disabled_input" disabled="disabled">
+         <input type="checkbox" name="checkedbox" value="1" checked="checked">
+         <input type="checkbox" name="uncheckedbox" value="2">
+         <select id="animal" name="animal">
+            <option id="select-option-monkey">Monkey</option>
+            <option id="select-option-capybara" selected="selected">Capybara</option>
+         </select>
+         <select name="toppings" id="toppings" multiple="multiple">
+            <optgroup label="Mediocre Toppings">
+               <option selected="selected" id="topping-apple">Apple</option>
+               <option selected="selected" id="topping-banana">Banana</option>
+            </optgroup>
+            <optgroup label="Best Toppings">
+               <option selected="selected" id="topping-cherry">Cherry</option>
+            </optgroup>
+         </select>
+         <textarea id="only-textarea">
+            what a wonderful area for text
+         </textarea>
+         <input type="radio" id="only-radio" value="1">
+      </form>
+
+      <script type="text/javascript">
+         function clearSelections() {
+            var selectBox = document.getElementById('toppings')
+               for (var i = 0; i < selectBox.options.length; i++) {
+                  selectBox.options[i].selected = false;
+               }
+         }
+         function selectMonkey() {
+            var monkey = document.getElementById('select-option-monkey').selected = true;
+         }
+         function setInputValue(val) {
+            document.getElementById('foo').value = val;
+         }
+      </script>
+
+   </body>
+</html>
