@@ -31,10 +31,11 @@
 
       <script type="text/javascript">
          function clearSelections() {
-            var selectBox = document.getElementById('toppings')
-               for (var i = 0; i < selectBox.options.length; i++) {
-                  selectBox.options[i].selected = false;
-               }
+            var selectBox = document.getElementById('toppings');
+            for (var i = 0; i < selectBox.options.length; i++) {
+               selectBox.options[i].selected = false;
+               selectBox.options[i].removeAttribute("selected");
+            }
          }
          function selectMonkey() {
             var monkey = document.getElementById('select-option-monkey').selected = true;

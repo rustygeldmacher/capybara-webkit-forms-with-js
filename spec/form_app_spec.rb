@@ -36,7 +36,6 @@ describe Capybara::Driver::Webkit do
          subject.find("//select[@name='toppings']//option[@selected='selected']").length.should == 3
          toppings_select.value.should == ["Apple", "Banana", "Cherry"]
          subject.evaluate_script("clearSelections();")
-         # Both of these next two lines will fail
          toppings_select.value.should == []
          subject.find("//select[@name='toppings']//option[@selected='selected']").length.should == 0
       end
